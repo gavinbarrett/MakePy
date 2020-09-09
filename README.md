@@ -51,13 +51,13 @@ As of right now, testing is limited. You can create your own c/c++ project folde
 
 ```bash
 # set executable permissions on the test script
-chmod +x run_tests.sh
+chmod +x runtests
 
 # run the test script on the test directory
-./run_tests.sh tests/
+./runtests tests/
 ```
 or
 ```bash
 # run the test script on your project directory
-./run_tests.sh <project>
+./runtests <project>
 ```
