@@ -14,7 +14,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Setup Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v2
         with: 
           python-version: ${{ matrix.python-version }}
       - name: Build/Run Makefile
-        run: ./run_tests.sh tests/
+        run: |
+          ./run_tests.sh tests/
