@@ -1,7 +1,7 @@
-# Description
+## Description
 This is a small python utility for generating Makefiles for C and C++ programs.
 
-# Installation
+## Installation
 Currently, MakePy is only being released for Linux distributions.
 
 Install it by running
@@ -36,7 +36,7 @@ rm -fr /tmp/MakePy
 
 In the future, MakePy will be available through the pip package manager.
 
-# Usage
+## Usage
 You can then run the script 
 ```python
 makepy.py <executable> <project>
@@ -44,7 +44,7 @@ makepy.py <executable> <project>
 
 This command will run the MakePy.py script in the \<project\> directory and output a file named Makefile in the \<project\> directory containing a rule for building the binary executable named \<executable\>.
 
-# Testing
+## Testing
 As of right now, testing is limited. You can create your own c/c++ project folders, or you can test on the minimal test folder that is provided.
 
 ```bash
