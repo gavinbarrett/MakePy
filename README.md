@@ -11,9 +11,6 @@ Install it by running
 # download the raw python script
 wget https://raw.githubusercontent.com/gavinbarrett/MakePy/master/makepy.py
 
-# set executable permissions on the script
-chmod +x makepy.py
-
 # move the scipt to a place in your path
 mv makepy.py /usr/local/bin
 ```
@@ -25,9 +22,6 @@ git clone https://github.com/gavinbarrett/MakePy /tmp
 
 # enter the directory
 cd MakePy
-
-# set executable permissions on the script
-chmod +x makepy.py
 
 # move the scipt to a place in your path
 mv makepy.py /usr/local/bin
@@ -50,9 +44,6 @@ This command will run the MakePy.py script in the \<project\> directory and outp
 As of right now, testing is limited. You can create your own c/c++ project folders, or you can test on the minimal test folder that is provided.
 
 ```bash
-# set executable permissions on the test script
-chmod +x runtests
-
 # run the test script on the test directory
 ./runtests tests/
 ```
