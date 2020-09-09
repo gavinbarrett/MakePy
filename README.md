@@ -1,5 +1,5 @@
 ## Description
-This is a small python utility for generating Makefiles for C and C++ programs.
+This is a small Python utility for generating Makefiles for C and C++ programs.
 
 ## Installation
 Currently, MakePy is only being released for Linux distributions.
