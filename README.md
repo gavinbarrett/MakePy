@@ -43,3 +43,19 @@ makepy.py <executable> <project>
 ```
 
 This command will run the MakePy.py script in the \<project\> directory and output a file named Makefile in the \<project\> directory containing a rule for building the binary executable named \<executable\>.
+
+# Testing
+As of right now, testing is limited. You can create your own c/c++ project folders, or you can test on the minimal test folder that is provided.
+
+```bash
+# set executable permissions on the test script
+chmod +x run_tests.sh
+
+# run the test script on the test directory
+./run_tests.sh tests/
+```
+or
+```bash
+# run the test script on your project directory
+./run_tests.sh <project>
+```

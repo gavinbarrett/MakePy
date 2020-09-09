@@ -5,6 +5,10 @@ from os import path
 from glob import glob
 from sys import argv, exit
 
+GREEN = '\u001b[32m'
+WHITE = '\u001b[37m'
+RED = '\033[91m'
+CEND = '\033[0m'
 
 class FileObject:
 	
@@ -33,7 +37,7 @@ def make_makefile(CC, CFLAGS, STD, CLEAN, OUT, FOBJS, PATH):
 
 		# write out cleaning rul
 		outfile.write(CLEAN);
-	print(f'Makefile generated for {OUT}')
+	print(f'{GREEN}\u2713 Makefile generated for {OUT}{CEND}')
 
 
 def set_makefile(compiler, outfile, fobjs, path):
@@ -127,10 +131,10 @@ def get_dependencies(compiler, h, c, cpp):
 
 def check_file_format(c, cpp):
 	if (len(c) and len(cpp)):
-		print(f'Found both .c and .cc/.c++/.cpp files.\nMakePy currently doesn\'t support compiling C++ programs with C files.')
+		print(f'{RED}\u2717 Found both .c and .cc/.c++/.cpp files. MakePy currently doesn\'t support compiling C++ programs with C files.{CEND}')
 		exit()
 	if (not len(c) and not len(cpp)):
-		print(f'No .c or .cc/.c++/.cpp found.')
+		print(f'{RED}\u2717 No .c or .cc/.c++/.cpp found.{CEND}')
 		exit()
 	return 'gcc' if len(c) else 'g++'
 
@@ -154,7 +158,7 @@ def main():
 		# set compiler options and generate makefile
 		set_makefile(compiler, argv[1], fobjs, direct)
 	else:
-		print('Provided path is not a directory.')
+		print(f'{RED}\u2717 Provided path is not a directory.{CEND}')
 		exit()
 
 
