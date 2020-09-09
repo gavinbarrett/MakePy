@@ -14,7 +14,7 @@ fi
 python makepy.py test_binary $1
 
 # compile the test files
-cd tests && make
+cd $1 && make
 
 if [ "$?" -eq "0" ]
 then
