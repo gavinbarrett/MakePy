@@ -1,6 +1,8 @@
 ## Description
 This is a small Python utility for generating Makefiles for C and C++ programs.
 
+![](https://github.com/gavinbarrett/MakePy/workflows/MakePy%20Build%20Test/badge.svg)
+
 ## Installation
 Currently, MakePy is only being released for Linux distributions.
 
