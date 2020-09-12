@@ -37,7 +37,7 @@ def make_makefile(CC, CFLAGS, STD, CLEAN, OUT, FOBJS, PATH):
 
 		# write out cleaning rul
 		outfile.write(CLEAN);
-	print(f'{GREEN}\u2713 Makefile generated for {OUT}{CEND}')
+	print(f'[{GREEN}\u2713{CEND}] Makefile generated for {OUT}')
 
 
 def set_makefile(compiler, outfile, fobjs, path):
@@ -131,10 +131,10 @@ def get_dependencies(compiler, h, c, cpp):
 
 def check_file_format(c, cpp):
 	if (len(c) and len(cpp)):
-		print(f'{RED}\u2717 Found both .c and .cc/.c++/.cpp files. MakePy currently doesn\'t support compiling C++ programs with C files.{CEND}')
+		print(f'[{RED}\u2717{CEND}] Found both .c and .cc/.c++/.cpp files. MakePy currently doesn\'t support compiling C++ programs with C files.')
 		exit()
 	if (not len(c) and not len(cpp)):
-		print(f'{RED}\u2717 No .c or .cc/.c++/.cpp found.{CEND}')
+		print(f'[{RED}\u2717{CEND}] No .c or .cc/.c++/.cpp found.')
 		exit()
 	return 'gcc' if len(c) else 'g++'
 
@@ -158,7 +158,7 @@ def main():
 		# set compiler options and generate makefile
 		set_makefile(compiler, argv[1], fobjs, direct)
 	else:
-		print(f'{RED}\u2717 Provided path is not a directory.{CEND}')
+		print(f'[{RED}\u2717{CEND}] Provided path is not a directory.')
 		exit()
 
 

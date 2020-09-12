@@ -6,7 +6,7 @@ NC=$(tput sgr0)
 
 if [ "$#" -eq "0" ]
 then
-	printf "${RED}\u2717 Please enter a project directory to test with.${NC}\n"
+	printf "[${RED}\u2717${NC}] Please enter a project directory to test with.\n"
 	exit 1
 fi
 
@@ -19,10 +19,17 @@ cd $1 && make
 if [ "$?" -eq "0" ]
 then
 	# no error occurred; all tests passed
-	printf "\n${GREEN}\u2713 Build test passed.${NC}\n"
+	printf "\n[${GREEN}\u2713${NC}] Build test passed.\n"
 	else
-		printf "\n${RED}\u2717 An error occurred${NC}\n"
+		printf "\n[${RED}\u2717${NC}] An error occurred.\n"
 fi
 
 # clean up test folder
-make clean && rm Makefile
+make clean > /dev/null
+rm Makefile
+if [ "$?" -eq "0" ]
+then
+	printf "[${GREEN}\u2713${NC}] Build files cleaned.\n"
+	else
+		printf "[${RED}\u2717${NC}] Error removing build files.\n"
+fi
