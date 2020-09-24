@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import re
+import pkgconfig
 from os import path
 from glob import glob
 from sys import argv, exit
